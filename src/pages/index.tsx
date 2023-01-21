@@ -4,8 +4,9 @@ import Head from "next/head";
 import About from "../components/About";
 import Contacts from "../components/Contacts";
 import Navbar from "../components/Navbar";
-import Projects from "../components/Projects";
+// import Projects from "../components/Projects";
 import useOnScreen from "../utils/hooks/useOnScreen";
+import MobileProjects from "../components/MobileProjects";
 
 const Home: NextPage = () => {
   const [active, setActive] = React.useState("logo");
@@ -26,10 +27,6 @@ const Home: NextPage = () => {
     if (projectsVisible) setActive("projects");
     if (contactsVisible) setActive("contacts");
   }, [aboutVisible, contactsVisible, homeVisible, projectsVisible]);
-
-  // if (activeAbout) setActive("about");
-  // if (activeProjects) setActive("projects");
-  // if (activeContacts) setActive("contacts");
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.currentTarget;
@@ -62,7 +59,8 @@ const Home: NextPage = () => {
         </p>
       </div>
       <About ref={aboutRef} />
-      <Projects ref={projectsRef} />
+      {/* <Projects ref={projectsRef} /> */}
+      <MobileProjects ref={projectsRef} />
       <Contacts ref={contactsRef} />
     </>
   );

@@ -11,8 +11,8 @@ const Navbar: React.FC<{
   onClick: (e: React.MouseEvent<HTMLElement>) => void;
 }> = ({ active, onClick }) => {
   return (
-    <div className="sticky top-0 w-full bg-neutral-400">
-      <div className="m-auto flex w-3/5 items-end justify-between space-x-36 py-3">
+    <div className="sticky top-0 z-30 w-full bg-neutral-400">
+      <div className="mx-auto flex w-3/5 items-end  justify-between py-3">
         <Link href="/#home" scroll={false}>
           <Image
             src={active === "logo" ? logoBlue : logoGray}
