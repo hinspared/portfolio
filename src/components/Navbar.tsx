@@ -6,8 +6,10 @@ import logoGray from "../../public/Logo_gray.png";
 
 const navigations = ["about", "projects", "contacts"];
 
-const Navbar = () => {
-  const [active, setActive] = React.useState("logo");
+const Navbar: React.FC<{
+  active: string;
+  onClick: (e: React.MouseEvent<HTMLElement>) => void;
+}> = ({ active, onClick }) => {
   return (
     <div className="sticky top-0 w-full bg-neutral-400">
       <div className="m-auto flex w-3/5 items-end justify-between space-x-36 py-3">
@@ -17,7 +19,7 @@ const Navbar = () => {
             alt="logo"
             width={60}
             height={60}
-            onClick={() => setActive("logo")}
+            onClick={onClick}
             className="cursor-pointer"
           />
         </Link>
@@ -27,7 +29,7 @@ const Navbar = () => {
               <div className="relative">
                 <p
                   className="relative z-20 cursor-pointer text-slate-800"
-                  onClick={() => setActive(navigation)}
+                  onClick={onClick}
                 >
                   {navigation}
                 </p>
