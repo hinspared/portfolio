@@ -25,11 +25,11 @@ const Contacts = React.forwardRef<HTMLDivElement>(
       <div className="mx-auto h-screen w-3/5 pt-36" id="contacts">
         <div ref={ref}>
           <div className="relative max-w-max">
-            <p className="md:text-5xl">contacts</p>
-            <div className="absolute left-[-0.5rem] bottom-1 -z-10 h-2 w-56 rounded-sm bg-[#0077FF]"></div>
+            <p className="text-lg font-medium md:text-5xl">contacts</p>
+            <div className="absolute left-[-0.5rem] bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF] md:h-2 md:w-56 md:rounded-sm"></div>
           </div>
           <p className="mt-3 ml-1 font-light">Let&apos;s have a chat</p>
-          <div className="mt-16 flex flex-col md:grid md:grid-cols-2 md:gap-16">
+          <div className="mt-14 flex flex-col gap-16 md:grid md:grid-cols-2">
             {React.Children.toArray(
               list.map((item) => (
                 <div className="flex flex-col">
