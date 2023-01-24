@@ -34,7 +34,7 @@ const Contacts = React.forwardRef<HTMLDivElement>(
           <p className="text-xs font-light md:mt-3 md:ml-1 md:text-base">
             Let&apos;s have a chat
           </p>
-          <div className="mt-14 flex flex-col gap-16 md:grid md:grid-cols-2">
+          <div className="mt-14 flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-16">
             {React.Children.toArray(
               list.map((item) => (
                 <div className="flex flex-col">
