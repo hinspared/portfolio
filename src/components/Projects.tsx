@@ -45,22 +45,17 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
     return (
       <>
         {props.mobile ? (
-          <div ref={ref} id="projects">
-            <div className="relative mx-auto flex w-3/5 pt-36">
-              <div className="relative max-w-max">
+          <div ref={ref} id="projects" className="h-screen">
+            <div className="relative mx-auto flex w-3/5 pt-20">
+              <div className="relative mb-10 max-w-max">
                 <p className="text-lg font-medium text-slate-900">projects</p>
                 <div className="absolute bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF]"></div>
               </div>
             </div>
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              className="mt-10 py-10"
-              loop
-            >
+            <Swiper spaceBetween={50} slidesPerView={1} loop>
               {React.Children.toArray(
                 projectsList.map((project) => (
-                  <SwiperSlide className="flex justify-center py-20">
+                  <SwiperSlide className="flex justify-center pb-16">
                     <Project
                       name={project.name}
                       description={project.description}
@@ -74,15 +69,15 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
             </Swiper>
           </div>
         ) : (
-          <div className="mx-auto h-screen w-3/5 pt-36" id="projects">
+          <div className="mx-auto h-screen w-3/5 pt-36 2xl:pt-72" id="projects">
             <div ref={ref}>
               <div className="relative max-w-max">
-                <p className="font-medium text-slate-900 md:text-5xl">
+                <p className="font-medium text-slate-900 md:text-5xl 2xl:text-7xl">
                   projects
                 </p>
-                <div className="absolute bottom-1 -z-10 h-2 w-56 rounded-sm bg-[#0077FF] md:left-[-0.5rem]"></div>
+                <div className="absolute bottom-1 -z-10 h-2 w-[130%] rounded-sm bg-[#0077FF] md:left-[-0.5rem]"></div>
               </div>
-              <div className="mt-10 flex justify-between">
+              <div className="mt-10 flex justify-center gap-x-10">
                 {React.Children.toArray(
                   projectsList.map((project) => (
                     <Project

@@ -17,7 +17,8 @@ const Project: React.FC<ProjectProps> = ({
   image,
 }) => {
   return (
-    <div className="flex w-56 flex-col gap-4 rounded-xl bg-[#f0f0f0] shadow-2xl hover:shadow-[#0077FF]">
+    // <>
+    <div className="flex w-56 flex-col gap-4 rounded-xl bg-[#f0f0f0] shadow-2xl hover:shadow-[#0077FF] 2xl:h-96 2xl:w-80">
       <div className="relative h-36 w-full rounded-xl">
         <Image
           src={image}
@@ -46,9 +47,17 @@ const Project: React.FC<ProjectProps> = ({
           </a>
           <div className="absolute left-[-3px] bottom-[-0.5px] z-10 h-6 w-6 rounded-sm bg-[#0077FF]"></div>
         </div>
-        <a href={demo} target="_blank" rel="noreferrer">
-          live-demo
-        </a>
+        <div className="relative">
+          <a
+            href={demo}
+            className="relative z-20"
+            target="_blank"
+            rel="noreferrer"
+          >
+            live-demo
+          </a>
+          <div className="absolute left-[-3px] bottom-[-0.5px] z-10 h-6 w-6 rounded-sm bg-[#0077FF]"></div>
+        </div>
       </div>
     </div>
   );
