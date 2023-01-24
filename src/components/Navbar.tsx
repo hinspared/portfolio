@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import logoBlue from "../../public/Logo_blue.png";
-import logoGray from "../../public/Logo_gray.png";
+import logoBlue from "../../public/Logo_blue.webp";
+import logoGray from "../../public/Logo_gray.webp";
 
 const Navbar: React.FC<{
   active: string;

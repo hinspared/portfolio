@@ -1,6 +1,5 @@
 import React from "react";
 import { type NextPage } from "next";
-import Head from "next/head";
 import About from "../components/About";
 import Contacts from "../components/Contacts";
 import Navbar from "../components/Navbar";
@@ -57,11 +56,6 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>h.ins</title>
-        <meta name="description" content="portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Navbar
         active={active}
         onClick={handleClick}
