@@ -38,6 +38,7 @@ const projectsList = [
 
 interface ProjectsProps {
   mobile: boolean;
+  isLandscape: boolean;
 }
 
 const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
@@ -45,7 +46,11 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
     return (
       <>
         {props.mobile ? (
-          <div ref={ref} id="projects" className="h-screen">
+          <div
+            ref={ref}
+            id="projects"
+            className={`${props.isLandscape ? "" : "h-screen"}`}
+          >
             <div className="relative mx-auto flex w-3/5 pt-20">
               <div className="relative mb-10 max-w-max">
                 <p className="text-lg font-medium text-slate-900">projects</p>

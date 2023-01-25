@@ -10,12 +10,26 @@ const navigations = ["about", "projects", "contacts"];
 
 const Home: NextPage = () => {
   const [mobile, setMobile] = React.useState(false);
+  const [isLandscape, setIsLandscape] = React.useState(false);
+
+  React.useEffect(() => {
+    function handleOrientationChange() {
+      setIsLandscape(window.screen.orientation.type.includes("landscape"));
+    }
+    console.log(window.screen);
+    window.addEventListener("orientationchange", handleOrientationChange);
+    return () => {
+      window.removeEventListener("orientationchange", handleOrientationChange);
+    };
+  }, []);
 
   React.useEffect(() => {
     const handleScreenSize = () => {
       setMobile(window.matchMedia("(max-width: 768px)").matches);
     };
+
     window.addEventListener("resize", handleScreenSize);
+
     handleScreenSize();
     return () => {
       window.removeEventListener("resize", handleScreenSize);
@@ -23,6 +37,8 @@ const Home: NextPage = () => {
   }, []);
 
   const [active, setActive] = React.useState("logo");
+
+  console.log(isLandscape);
 
   // setActive on visible div
   const homeRef = React.useRef(null);
@@ -64,7 +80,9 @@ const Home: NextPage = () => {
         mobile={mobile}
       />
       <div
-        className="mx-auto h-screen w-3/5 gap-y-3 pt-20 md:pt-36 2xl:pt-72"
+        className={`mx-auto w-3/5 gap-y-3 pt-20 md:h-screen md:pt-36 2xl:pt-72 ${
+          mobile && isLandscape ? "" : "h-screen"
+        }`}
         id="home"
       >
         <p className="text-sm md:text-xl 2xl:text-3xl">
@@ -83,9 +101,9 @@ const Home: NextPage = () => {
           Front-End Developer
         </p>
       </div>
-      <About ref={aboutRef} />
-      <Projects mobile={mobile} ref={projectsRef} />
-      <Contacts ref={contactsRef} />
+      <About mobile={mobile} isLandscape={isLandscape} ref={aboutRef} />
+      <Projects mobile={mobile} isLandscape={isLandscape} ref={projectsRef} />
+      <Contacts mobile={mobile} isLandscape={isLandscape} ref={contactsRef} />
     </>
   );
 };

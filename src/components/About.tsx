@@ -15,11 +15,18 @@ const skills = [
   "CI/CD",
 ];
 
-const About = React.forwardRef<HTMLDivElement>(
+interface AboutProps {
+  mobile: boolean;
+  isLandscape: boolean;
+}
+
+const About = React.forwardRef<HTMLDivElement, AboutProps>(
   (props, ref: React.LegacyRef<HTMLDivElement>) => {
     return (
       <div
-        className="mx-auto h-screen w-3/5 pt-20 md:pt-36 2xl:pt-72"
+        className={`mx-auto ${
+          props.mobile && props.isLandscape ? "" : "h-screen"
+        } w-3/5 pt-20 md:pt-36 2xl:pt-72`}
         id="about"
       >
         <div ref={ref}>

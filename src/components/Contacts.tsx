@@ -19,11 +19,18 @@ const list = [
   },
 ];
 
-const Contacts = React.forwardRef<HTMLDivElement>(
+interface ContactsProps {
+  mobile: boolean;
+  isLandscape: boolean;
+}
+
+const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
   (props, ref: React.LegacyRef<HTMLDivElement>) => {
     return (
       <div
-        className="mx-auto h-screen w-3/5 pt-20 md:pt-36 2xl:pt-72"
+        className={`mx-auto  w-3/5 pt-20 md:pt-36 2xl:pt-72 ${
+          props.mobile && props.isLandscape ? "" : "h-screen"
+        }`}
         id="contacts"
       >
         <div ref={ref}>
