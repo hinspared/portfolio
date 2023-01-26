@@ -13,8 +13,9 @@ const Home: NextPage = () => {
   const [isLandscape, setIsLandscape] = React.useState(false);
 
   React.useEffect(() => {
+    console.log(window.screen.height);
     function handleOrientationChange() {
-      setIsLandscape(window.screen.orientation.type.includes("landscape"));
+      setIsLandscape(window.screen.height < 568);
     }
     console.log(window.screen);
     window.addEventListener("orientationchange", handleOrientationChange);
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
 
   React.useEffect(() => {
     const handleScreenSize = () => {
-      setMobile(window.matchMedia("(max-width: 768px)").matches);
+      setMobile(window.matchMedia("(max-width: 900px)").matches);
     };
 
     window.addEventListener("resize", handleScreenSize);
@@ -37,8 +38,6 @@ const Home: NextPage = () => {
   }, []);
 
   const [active, setActive] = React.useState("logo");
-
-  console.log(isLandscape);
 
   // setActive on visible div
   const homeRef = React.useRef(null);

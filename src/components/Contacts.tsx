@@ -26,10 +26,11 @@ interface ContactsProps {
 
 const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
   (props, ref: React.LegacyRef<HTMLDivElement>) => {
+    const landscapeMode = props.mobile && props.isLandscape;
     return (
       <div
         className={`mx-auto  w-3/5 pt-20 md:pt-36 2xl:pt-72 ${
-          props.mobile && props.isLandscape ? "" : "h-screen"
+          landscapeMode ? "mb-16" : "h-screen"
         }`}
         id="contacts"
       >
@@ -41,7 +42,13 @@ const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
           <p className="text-xs font-light md:mt-3 md:ml-1 md:text-base">
             Let&apos;s have a chat
           </p>
-          <div className="mt-14 flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-16">
+          <div
+            className={`mt-14 ${
+              landscapeMode
+                ? "grid grid-cols-2 gap-x-20 gap-y-5"
+                : "flex flex-col gap-10"
+            }  md:grid md:grid-cols-2 md:gap-16`}
+          >
             {React.Children.toArray(
               list.map((item) => (
                 <div className="flex flex-col">
