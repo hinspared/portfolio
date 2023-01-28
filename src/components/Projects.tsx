@@ -22,7 +22,7 @@ const projectsList = [
     image: nft_marketplace,
   },
   {
-    name: "todo_app",
+    name: "todo_list",
     description:
       "This is a simple to-do application built with TypeScript/React and MaterialUI. It allows users to add, edit, and delete tasks, and also add subtasks",
     github: "https://github.com/Hinspared/todoapp",
@@ -34,7 +34,7 @@ const projectsList = [
     description:
       "My first landing page built in Javascript/React and MaterialUI",
     github: "https://github.com/Hinspared/travello",
-    demo: "https://travellobyhinspared.netlify.app",
+    demo: "https://travellobyhinspared.vercel.app",
     image: travello,
   },
 ];
