@@ -2,7 +2,10 @@ import React from "react";
 import nft_marketplace from "../../public/projects/nft_marketplace.png";
 import todo_app from "../../public/projects/todo_app.png";
 import travello from "../../public/projects/travello.png";
-import Project from "./Project";
+import dynamic from "next/dynamic";
+const Project = dynamic(() => import("./Project"), {
+  ssr: false,
+});
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";

@@ -29,7 +29,7 @@ const Modal = () => {
           ref={ref}
         >
           <p>
-            I&apos;m a self-taught Front-End developer who began this journey in
+            I&apos;m a self-taught Front-End developer who began my journey in
             January 2022. I started learning JavaScript, and quickly realized
             the power and versatility of this language. In May 2022, I decided
             to dive deeper into web development and picked up React. I was
@@ -48,12 +48,6 @@ const Modal = () => {
             Next.js, I&apos;m well-equipped to build modern web applications
             that are fast, reliable and scalable.
           </p>
-          {/* <button
-            className="mt-3 rounded-lg bg-red-500 p-2 text-white"
-            onClick={() => setIsOpen(false)}
-          >
-            Close
-          </button> */}
         </div>
       </div>
     </>

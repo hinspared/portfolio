@@ -3,8 +3,8 @@ import { type NextPage } from "next";
 import About from "../components/About";
 import Contacts from "../components/Contacts";
 import Navbar from "../components/Navbar";
-import Projects from "../components/Projects";
 import useOnScreen from "../utils/hooks/useOnScreen";
+import Projects from "../components/Projects";
 
 const navigations = ["about", "projects", "contacts"];
 
