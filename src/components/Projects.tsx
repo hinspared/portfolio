@@ -1,7 +1,7 @@
 import React from "react";
 import nft_marketplace from "../../public/projects/nft_marketplace.png";
 import todo_app from "../../public/projects/todo_app.png";
-import travello from "../../public/projects/travello.png";
+import travello from "../../public/projects/travello.webp";
 import dynamic from "next/dynamic";
 const Project = dynamic(() => import("./Project"), {
   ssr: false,
@@ -34,7 +34,7 @@ const projectsList = [
     description:
       "My first landing page built in Javascript/React and MaterialUI",
     github: "https://github.com/Hinspared/travello",
-    demo: "https://travellobyhinspared.vercel.app",
+    demo: "https://travellobyhinspared.netlify.app",
     image: travello,
   },
 ];
