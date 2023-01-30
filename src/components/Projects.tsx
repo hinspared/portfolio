@@ -1,16 +1,17 @@
 import React from "react";
-import nft_marketplace from "../../public/projects/nft_marketplace.png";
-import todo_app from "../../public/projects/todo_app.png";
+import nft_marketplace from "../../public/projects/nft_marketplace.webp";
+import todo_list from "../../public/projects/todo_list.webp";
 import travello from "../../public/projects/travello.webp";
 import dynamic from "next/dynamic";
 const Project = dynamic(() => import("./Project"), {
   ssr: false,
 });
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
+// import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+// import "swiper/css/scrollbar";
 
 const projectsList = [
   {
@@ -26,13 +27,13 @@ const projectsList = [
     description:
       "This is a simple to-do application built with TypeScript/React and MaterialUI. It allows users to add, edit, and delete tasks, and also add subtasks",
     github: "https://github.com/Hinspared/todoapp",
-    demo: "https://todoapp-hinspared.netlify.app",
-    image: todo_app,
+    demo: "https://todo-list.hinspared.vercel.app",
+    image: todo_list,
   },
   {
     name: "travello",
     description:
-      "My first landing page built in Javascript/React and MaterialUI",
+      "My first landing page built with Javascript/React and MaterialUI",
     github: "https://github.com/Hinspared/travello",
     demo: "https://travellobyhinspared.netlify.app",
     image: travello,
@@ -60,7 +61,13 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
                 <div className="absolute bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF]"></div>
               </div>
             </div>
-            <Swiper spaceBetween={50} slidesPerView={1} loop>
+            <Swiper
+              spaceBetween={50}
+              slidesPerView={1}
+              loop
+              pagination={{ clickable: true }}
+              modules={[Pagination]}
+            >
               {React.Children.toArray(
                 projectsList.map((project) => (
                   <SwiperSlide className="flex justify-center pb-16">
