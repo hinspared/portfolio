@@ -27,23 +27,24 @@ interface ContactsProps {
 const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
   (props, ref: React.LegacyRef<HTMLDivElement>) => {
     const landscapeMode = props.mobile && props.isLandscape;
+
     return (
       <div
-        className={`mx-auto  w-3/5 pt-20 md:pt-36 2xl:pt-72 ${
+        className={`mx-auto  w-4/5 pt-20 md:w-3/5 md:pt-36 2xl:pt-72 ${
           landscapeMode ? "mb-16" : "h-screen"
         }`}
         id="contacts"
       >
         <div ref={ref}>
           <div className="relative max-w-max">
-            <p className="text-xl font-medium md:text-5xl">contacts</p>
+            <p className="text-2xl font-medium md:text-5xl">contacts</p>
             <div className="absolute left-[-0.5rem] bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF] md:h-2 md:w-56 md:rounded-sm"></div>
           </div>
           <p className="text-xs font-light md:mt-3 md:ml-1 md:text-base">
             Let&apos;s have a chat
           </p>
           <div
-            className={`mt-14 ${
+            className={`mt-3 md:mt-14 ${
               landscapeMode
                 ? "grid grid-cols-2 gap-x-20 gap-y-5"
                 : "flex flex-col gap-10"

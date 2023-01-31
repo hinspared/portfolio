@@ -23,12 +23,12 @@ const Modal = () => {
         } top-0 left-0 z-30 flex h-screen w-full items-center justify-center bg-gray-900 bg-opacity-75`}
       >
         <div
-          className={`h-3/5 w-4/5 overflow-scroll rounded-lg bg-white p-4 md:h-max ${
+          className={`h-3/5 w-4/5 overflow-scroll rounded-lg bg-white p-5 md:h-max ${
             isOpen ? "" : "hidden"
           }`}
           ref={ref}
         >
-          <p>
+          <p className="text-sm md:text-base">
             I&apos;m a self-taught Front-End developer who began my journey in
             January 2022. I started learning JavaScript, and quickly realized
             the power and versatility of this language. In May 2022, I decided

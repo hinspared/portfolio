@@ -47,17 +47,19 @@ interface ProjectsProps {
 
 const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
   (props, ref: React.LegacyRef<HTMLDivElement>) => {
+    const landscapeMode = props.mobile && props.isLandscape;
+
     return (
       <>
         {props.mobile ? (
           <div
             ref={ref}
             id="projects"
-            className={`${props.isLandscape ? "" : "h-screen"}`}
+            className={`${landscapeMode ? "" : "h-screen"}`}
           >
-            <div className="relative mx-auto flex w-3/5 pt-20">
+            <div className="relative mx-auto flex w-4/5 pt-20 md:w-3/5">
               <div className="relative mb-10 max-w-max">
-                <p className="text-lg font-medium text-slate-900">projects</p>
+                <p className="text-2xl font-medium text-slate-900">projects</p>
                 <div className="absolute bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF]"></div>
               </div>
             </div>
@@ -87,9 +89,7 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
           <div className="mx-auto h-screen w-3/5 pt-36 2xl:pt-72" id="projects">
             <div ref={ref}>
               <div className="relative max-w-max">
-                <p className="font-medium text-slate-900 md:text-5xl 2xl:text-7xl">
-                  projects
-                </p>
+                <p className="text-5xl font-medium 2xl:text-7xl">projects</p>
                 <div className="absolute bottom-1 -z-10 h-2 w-[130%] rounded-sm bg-[#0077FF] md:left-[-0.5rem]"></div>
               </div>
               <div className="mt-10 flex justify-center gap-x-10">

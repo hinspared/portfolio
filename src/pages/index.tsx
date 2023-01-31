@@ -13,11 +13,9 @@ const Home: NextPage = () => {
   const [isLandscape, setIsLandscape] = React.useState(false);
 
   React.useEffect(() => {
-    console.log(window.screen.height);
     function handleOrientationChange() {
-      setIsLandscape(window.screen.height < 568);
+      setIsLandscape(window.matchMedia("(orientation: portrait)").matches);
     }
-    console.log(window.screen);
     window.addEventListener("orientationchange", handleOrientationChange);
     return () => {
       window.removeEventListener("orientationchange", handleOrientationChange);
@@ -26,7 +24,7 @@ const Home: NextPage = () => {
 
   React.useEffect(() => {
     const handleScreenSize = () => {
-      setMobile(window.matchMedia("(max-width: 900px)").matches);
+      setMobile(window.matchMedia("(max-width: 768px)").matches);
     };
 
     window.addEventListener("resize", handleScreenSize);
@@ -79,7 +77,7 @@ const Home: NextPage = () => {
         mobile={mobile}
       />
       <div
-        className={`mx-auto w-3/5 gap-y-3 pt-20 md:h-screen md:pt-36 2xl:pt-72 ${
+        className={`mx-auto w-4/5 gap-y-3 pt-20 md:h-screen md:w-3/5 md:pt-36 2xl:pt-72 ${
           mobile && isLandscape ? "" : "h-screen"
         }`}
         id="home"
@@ -91,10 +89,13 @@ const Home: NextPage = () => {
           <p className="text-xl md:text-2xl md:text-5xl 2xl:text-7xl">
             Marat Khasanov
           </p>
-          <div className="absolute bottom-1 left-[-2%] -z-10 h-2 w-[105%] bg-[#0077FF] md:rounded-sm"></div>
+          <div className="absolute bottom-1 left-[-2%] -z-10 h-1.5 w-[105%] bg-[#0077FF] md:h-2 md:rounded-sm"></div>
         </div>
         <p className="text-sm md:text-xl 2xl:text-3xl">Front-End Developer</p>
-        <p className="mt-10 md:w-3/5 md:text-lg 2xl:text-2xl" ref={homeRef}>
+        <p
+          className="mt-10 text-lg md:w-3/5 md:text-2xl 2xl:text-4xl"
+          ref={homeRef}
+        >
           As a purposeful and highly motivated person I am looking for a company
           that will give me a chance to apply my skills and develop myself as a
           Front-End Developer

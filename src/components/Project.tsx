@@ -19,8 +19,8 @@ const Project: React.FC<ProjectProps> = ({
 }) => {
   return (
     <Link href={demo} target="_blank" rel="noreferrer">
-      <div className="flex h-96 w-56 flex-col gap-4 rounded-xl bg-[#f0f0f0] shadow-2xl hover:shadow-[#0077FF] 2xl:h-96 2xl:w-80">
-        <div className="relative h-36 w-full rounded-xl">
+      <div className="flex w-56 flex-col gap-4 rounded-xl bg-[#f0f0f0] shadow-2xl hover:shadow-[#0077FF] md:h-96 md:w-56 2xl:h-96 2xl:w-80">
+        <div className="relative h-36 w-full rounded-xl md:h-44">
           <Image
             src={image}
             alt={name}

@@ -15,7 +15,7 @@ const Navbar: React.FC<{
 
   return (
     <div className="sticky top-0 z-30 w-full bg-neutral-400">
-      <div className="mx-auto flex w-3/5 items-end  justify-between py-3">
+      <div className="mx-auto flex w-4/5 items-end justify-between  py-3 md:w-3/5">
         <Link href="/#home" scroll={false}>
           <Image
             src={active === "logo" ? logoBlue : logoGray}
