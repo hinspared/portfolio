@@ -7,7 +7,6 @@ export default function useOutsideClick(callback: () => void) {
     const handleClick = (e: Event) => {
       const target = e.target as Element;
       if (target.classList.contains("hidden")) return;
-      console.log(target);
       if (ref.current && !ref.current.contains(target)) {
         callback();
       }

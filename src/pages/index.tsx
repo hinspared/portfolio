@@ -58,13 +58,23 @@ const Home: NextPage = () => {
     const target = e.currentTarget;
     const text = target.textContent as string;
     text.length > 0 ? setActive(text) : setActive("logo");
+    text !== ""
+      ? document.getElementById(text)?.scrollIntoView()
+      : document.getElementById("home")?.scrollIntoView();
   };
 
   const handleClickMobile = () => {
     const currentIndex = navigations.indexOf(active);
     const nextSection = navigations[currentIndex + 1] as string;
-    console.log(currentIndex);
-    active === navigations[2] ? setActive("logo") : setActive(nextSection);
+    const lastSection = active === navigations[2];
+    // Navigate to home section on contacts section
+    if (lastSection) {
+      setActive("logo");
+      document.getElementById("home")?.scrollIntoView();
+    } else {
+      setActive(nextSection);
+      document.getElementById(nextSection)?.scrollIntoView();
+    }
   };
 
   return (
