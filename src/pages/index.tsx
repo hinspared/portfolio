@@ -54,13 +54,14 @@ const Home: NextPage = () => {
     if (contactsVisible) setActive("contacts");
   }, [aboutVisible, contactsVisible, homeVisible, projectsVisible]);
 
+  const scroll = (target: string) =>
+    document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.currentTarget;
     const text = target.textContent as string;
     text.length > 0 ? setActive(text) : setActive("logo");
-    text !== ""
-      ? document.getElementById(text)?.scrollIntoView()
-      : document.getElementById("home")?.scrollIntoView();
+    text !== "" ? scroll(text) : scroll("home");
   };
 
   const handleClickMobile = () => {
@@ -70,10 +71,10 @@ const Home: NextPage = () => {
     // Navigate to home section on contacts section
     if (lastSection) {
       setActive("logo");
-      document.getElementById("home")?.scrollIntoView();
+      scroll("home");
     } else {
       setActive(nextSection);
-      document.getElementById(nextSection)?.scrollIntoView();
+      scroll(nextSection);
     }
   };
 
@@ -95,12 +96,9 @@ const Home: NextPage = () => {
         <p className="text-sm md:text-xl 2xl:text-3xl">
           Hello there, I&apos;m{" "}
         </p>
-        <div className="relative max-w-max">
-          <p className="text-xl md:text-2xl md:text-5xl 2xl:text-7xl">
-            Marat Khasanov
-          </p>
-          <div className="absolute bottom-1 left-[-2%] -z-10 h-1.5 w-[105%] bg-[#0077FF] md:h-2 md:rounded-sm"></div>
-        </div>
+        <p className="text-xl underline decoration-[#0077FF] decoration-4 underline-offset-4 md:text-2xl md:text-5xl 2xl:text-7xl">
+          Marat Khasanov
+        </p>
         <p className="text-sm md:text-xl 2xl:text-3xl">Front-End Developer</p>
         <p
           className="mt-10 text-lg md:w-3/5 md:text-2xl 2xl:text-4xl"

@@ -57,11 +57,15 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
             id="projects"
             className={`${landscapeMode ? "" : "h-screen"}`}
           >
-            <div className="relative mx-auto flex w-4/5 pt-20 md:w-3/5">
-              <div className="relative mb-10 max-w-max">
-                <p className="text-2xl font-medium text-slate-900">projects</p>
-                <div className="absolute bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF]"></div>
-              </div>
+            <div className="relative mx-auto mb-10 flex w-4/5 pt-20 md:w-3/5">
+              <p
+                className="text-2xl font-medium text-slate-900 underline decoration-[#0077FF] decoration-4 underline-offset-4"
+                style={{
+                  textDecorationSkipInk: "none",
+                }}
+              >
+                projects
+              </p>
             </div>
             <Swiper
               spaceBetween={50}
@@ -88,10 +92,15 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
         ) : (
           <div className="mx-auto h-screen w-3/5 pt-36 2xl:pt-72" id="projects">
             <div ref={ref}>
-              <div className="relative max-w-max">
-                <p className="text-5xl font-medium 2xl:text-7xl">projects</p>
-                <div className="absolute bottom-1 -z-10 h-2 w-[130%] rounded-sm bg-[#0077FF] md:left-[-0.5rem]"></div>
-              </div>
+              <p
+                className="text-5xl font-medium underline decoration-[#0077FF] decoration-4 underline-offset-4 2xl:text-7xl"
+                style={{
+                  textDecorationSkipInk: "none",
+                }}
+              >
+                projects
+              </p>
+
               <div className="mt-10 flex justify-center gap-x-10">
                 {React.Children.toArray(
                   projectsList.map((project) => (

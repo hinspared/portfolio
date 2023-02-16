@@ -15,7 +15,7 @@ const skills = [
   "TailwindCSS",
   "Git/Github",
   "CI/CD",
-  "Jest",
+  "Testing (Jest)",
 ];
 
 interface AboutProps {
@@ -35,18 +35,15 @@ const About = React.forwardRef<HTMLDivElement, AboutProps>(
       >
         <div ref={ref}>
           <div
-            className={`${
-              landscapeMode ? "grid grid-cols-2 gap-3" : "flex flex-col gap-3"
+            className={`gap-8 ${
+              landscapeMode ? "grid grid-cols-2" : "flex flex-col"
             }`}
           >
             <div>
-              <div className="relative max-w-max">
-                <p className="text-2xl font-medium md:text-5xl 2xl:text-7xl">
-                  about
-                </p>
-                <div className="absolute bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF] md:left-[-0.5rem] md:h-2 md:rounded-sm"></div>
-              </div>
-              <p className=" mt-3 text-sm md:mt-5 md:mt-10 md:w-3/5 md:text-lg 2xl:text-2xl">
+              <p className="text-2xl font-medium underline decoration-[#0077FF] decoration-4 underline-offset-4 md:text-5xl 2xl:text-7xl">
+                about
+              </p>
+              <p className="mt-3 text-sm md:mt-5 md:mt-10 md:w-3/5 md:text-lg 2xl:text-2xl">
                 I&apos;m a self-taught Front-End developer who began my journey
                 in January 2022 with JavaScript. I quickly moved on to React and
                 later, TypeScript and Next.js to build efficient, scalable web
@@ -56,23 +53,17 @@ const About = React.forwardRef<HTMLDivElement, AboutProps>(
               <Modal />
             </div>
             <div>
-              <div className="relative max-w-max md:mt-16">
-                <p className="text-2xl font-medium md:text-5xl 2xl:text-7xl">
-                  skills
-                </p>
-                <div className="absolute bottom-1 -z-10 h-1 w-[130%] bg-[#0077FF] md:left-[-0.5rem] md:h-2 md:rounded-sm"></div>
-              </div>
+              <p className="text-2xl font-medium underline decoration-[#0077FF] decoration-4 underline-offset-4 md:text-5xl 2xl:text-7xl">
+                skills
+              </p>
               <div
-                className={`mt-3 grid ${
+                className={`mt-3 grid md:mt-5 ${
                   landscapeMode ? "grid-cols-2" : "grid-cols-2"
                 } justify-between gap-x-20 gap-y-2 px-1 md:grid-cols-4 2xl:mt-10`}
               >
                 {React.Children.toArray(
                   skills.map((skill) => (
-                    <div className="relative">
-                      <p className="text-sm 2xl:text-2xl">{skill}</p>
-                      <div className="absolute left-[-3px] top-1 -z-10 h-4 w-4 rounded-sm bg-[#0077FF] 2xl:h-6 2xl:w-5"></div>
-                    </div>
+                    <p className="text-sm font-medium 2xl:text-2xl">{skill}</p>
                   ))
                 )}
               </div>

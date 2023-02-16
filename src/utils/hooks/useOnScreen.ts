@@ -13,12 +13,12 @@ const useOnScreen = (ref: React.RefObject<HTMLElement>, threshold = 0.8) => {
         threshold,
       }
     );
+
     const currentElement = ref.current as Element;
 
-    if (ref.current) {
+    if (currentElement) {
       observer.observe(currentElement);
     }
-
     return () => {
       observer.unobserve(currentElement);
     };

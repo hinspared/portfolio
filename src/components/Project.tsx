@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
+import { BsGithub } from "react-icons/bs";
 
 interface ProjectProps {
   name: string;
@@ -19,8 +20,8 @@ const Project: React.FC<ProjectProps> = ({
 }) => {
   return (
     <Link href={demo} target="_blank" rel="noreferrer">
-      <div className="flex w-56 flex-col gap-4 rounded-xl bg-[#f0f0f0] shadow-2xl hover:shadow-[#0077FF] md:h-96 md:w-56 2xl:h-96 2xl:w-80">
-        <div className="relative h-36 w-full rounded-xl md:h-44">
+      <div className="flex w-56 flex-col gap-4 rounded-xl bg-[#f0f0f0] shadow-2xl hover:shadow-[#0077FF] md:h-96 2xl:w-80">
+        <div className="relative h-36 w-full rounded-xl 2xl:h-56">
           <Image
             src={image}
             alt={name}
@@ -31,23 +32,19 @@ const Project: React.FC<ProjectProps> = ({
               33vw"
           />
         </div>
-        <div className="relative mx-3 max-w-max">
-          <p className="relative z-20">{name}</p>
-          <div className="absolute bottom-1 z-10 h-1 w-full rounded-sm bg-[#0077FF]"></div>
-        </div>
-        <p className="mx-3 text-sm">{description}</p>
-        <div className="m-3 mt-auto flex justify-between">
-          <div className="relative">
-            <a
-              href={github}
-              className="relative z-20"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github
-            </a>
-            <div className="absolute left-[-3px] bottom-[-0.5px] z-10 h-6 w-6 rounded-sm bg-[#0077FF]"></div>
-          </div>
+        <p className="relative z-20 px-3 underline decoration-[#0077FF] decoration-4 underline-offset-4">
+          {name}
+        </p>
+        <p className="px-3 text-sm">{description}</p>
+        <div className="mt-auto flex justify-end px-3 pb-3">
+          <a
+            href={github}
+            className="relative z-20"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsGithub className="text-3xl" />
+          </a>
         </div>
       </div>
     </Link>
