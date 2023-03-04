@@ -9,29 +9,28 @@ const Project = dynamic(() => import("./Project"), {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
-// import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import "swiper/css/scrollbar";
 
 const projectsList = [
   {
-    name: "nft_marketplace",
+    name: "NFT MARKETPLACE",
     description:
-      "NFT marketplace, where users can view/buy NFTs. Built with Typescript/NextJS, TailwindCSS, Prisma and ThirdwebSDK",
+      // "NFT marketplace, where users can view/buy NFTs. Built with Typescript/NextJS, TailwindCSS, Prisma and ThirdwebSDK",
+      "Full stack project where users can view and buy NFTs. Built with Typescript/NextJS, TailwindCSS, Prisma and ThirdwebSDK",
     github: "https://github.com/Hinspared/nft_marketplace",
     demo: "https://nft-marketplace-hinspared.vercel.app",
     image: nft_marketplace,
   },
   {
-    name: "todo_list",
+    name: "TODO LIST",
     description:
-      "This is a simple to-do application built with TypeScript/React and MaterialUI. It allows users to add, edit, and delete tasks, and also add subtasks",
-    github: "https://github.com/Hinspared/todoapp",
+      "This is a simple to-do list built with TypeScript/React, MaterialUI and Formik. It allows users to add, edit, and delete tasks, and also add subtasks",
+    github: "https://github.com/Hinspared/todo_list",
     demo: "https://todo-list.hinspared.vercel.app",
     image: todo_list,
   },
   {
-    name: "travello",
+    name: "TRAVELLO",
     description:
       "My first landing page built with Javascript/React and MaterialUI",
     github: "https://github.com/Hinspared/travello",

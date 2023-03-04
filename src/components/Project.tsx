@@ -32,7 +32,7 @@ const Project: React.FC<ProjectProps> = ({
               33vw"
           />
         </div>
-        <p className="relative z-20 px-3 underline decoration-[#0077FF] decoration-4 underline-offset-4">
+        <p className="relative z-20 px-3 font-semibold underline decoration-[#0077FF] decoration-4 underline-offset-4">
           {name}
         </p>
         <p className="px-3 text-sm">{description}</p>
