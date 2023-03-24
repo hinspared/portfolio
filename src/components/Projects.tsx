@@ -13,29 +13,42 @@ import "swiper/css/pagination";
 
 const projectsList = [
   {
-    name: "NFT MARKETPLACE",
+    name: "NFT Vault",
     description:
-      // "NFT marketplace, where users can view/buy NFTs. Built with Typescript/NextJS, TailwindCSS, Prisma and ThirdwebSDK",
-      "Full stack project where users can view and buy NFTs. Built with Typescript/NextJS, TailwindCSS, Prisma and ThirdwebSDK",
+      "NFT Vault is a NFT marketplace where users can view and buy NFTs, also it provides stats to compare different NFT collections",
     github: "https://github.com/Hinspared/nft_marketplace",
     demo: "https://nft-marketplace-hinspared.vercel.app",
     image: nft_marketplace,
+    stack: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    ],
   },
   {
     name: "TODO LIST",
     description:
-      "This is a simple to-do list built with TypeScript/React, MaterialUI and Formik. It allows users to add, edit, and delete tasks, and also add subtasks",
+      "This is a simple to-do list that allows users to add, edit, and delete tasks, and also add subtasks",
     github: "https://github.com/Hinspared/todo_list",
     demo: "https://todo-list.hinspared.vercel.app",
     image: todo_list,
+    stack: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+    ],
   },
   {
     name: "TRAVELLO",
-    description:
-      "My first landing page built with Javascript/React and MaterialUI",
+    description: "My first single-page application",
     github: "https://github.com/Hinspared/travello",
     demo: "https://travellobyhinspared.netlify.app",
     image: travello,
+    stack: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+    ],
   },
 ];
 
@@ -82,6 +95,7 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
                       github={project.github}
                       demo={project.demo}
                       image={project.image}
+                      stack={project.stack}
                     />
                   </SwiperSlide>
                 ))
@@ -109,6 +123,7 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
                       github={project.github}
                       demo={project.demo}
                       image={project.image}
+                      stack={project.stack}
                     />
                   ))
                 )}

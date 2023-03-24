@@ -11,8 +11,8 @@ const Navbar: React.FC<{
   mobile: boolean;
 }> = ({ active, onClick, onClickMobile, navigations, mobile }) => {
   return (
-    <div className="sticky top-0 z-30 w-full bg-neutral-400">
-      <div className="mx-auto flex w-4/5 items-end justify-between  py-3 md:w-3/5">
+    <div className="fixed top-0 z-30 w-full bg-gray-400">
+      <div className="mx-auto flex w-4/5 items-end justify-between py-3 md:w-3/5">
         <Image
           src={active === "logo" ? logoBlue : logoGray}
           alt="logo"
@@ -41,14 +41,18 @@ const Navbar: React.FC<{
               navigations.map((navigation) => (
                 <div className="relative">
                   <p
-                    className="relative z-20 cursor-pointer text-slate-800"
+                    className={`relative z-20 cursor-pointer font-semibold ${
+                      active === navigation
+                        ? "text-[#0077FF]"
+                        : "text-[#C8C8C8]"
+                    }`}
                     onClick={onClick}
                   >
                     {navigation}
                   </p>
-                  {active === navigation ? (
+                  {/* {active === navigation ? (
                     <div className="absolute bottom-1 z-10 h-1 w-20 rounded-xl bg-[#0077FF]"></div>
-                  ) : null}
+                  ) : null} */}
                 </div>
               ))
             )}

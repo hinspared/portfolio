@@ -13,7 +13,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>marat khasanov</title>
+        <title>Marat Khasanov | Front-End Developer</title>
         <meta name="description" content="portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

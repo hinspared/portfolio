@@ -1,4 +1,6 @@
 import React from "react";
+import { BsFillTelephoneForwardFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 const list = [
   {
@@ -6,16 +8,8 @@ const list = [
     value: "+420608725616",
   },
   {
-    name: "github",
-    value: "https://github.com/Hinspared",
-  },
-  {
     name: "email",
     value: "khasanov.marat@icloud.com",
-  },
-  {
-    name: "linkedin",
-    value: "https://www.linkedin.com/in/marat-khasanov-209a02106/",
   },
 ];
 
@@ -33,11 +27,11 @@ const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
         className={`mx-auto  w-4/5 pt-20 md:w-3/5 md:pt-36 2xl:pt-72 ${
           landscapeMode ? "mb-16" : "h-screen"
         }`}
-        id="contacts"
+        id="contact"
       >
         <div ref={ref}>
           <p className="text-2xl font-medium underline decoration-[#0077FF] decoration-4 underline-offset-4 md:text-5xl">
-            contacts
+            contact
           </p>
           <p className="text-xs font-light md:mt-3 md:ml-1 md:text-base">
             Let&apos;s have a chat
@@ -51,47 +45,34 @@ const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
           >
             {React.Children.toArray(
               list.map((item) => (
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-3">
-                    <p className="relative z-20 text-xl font-light md:text-2xl">
-                      {item.name}:
-                    </p>
-                  </div>
+                <div className="flex items-center gap-5">
                   {item.name === "phone" ? (
-                    <a href={`tel:${item.value}`} className="mt-3">
-                      +420 608 725 616
-                    </a>
-                  ) : null}
-                  {item.name === "github" ? (
-                    <a
-                      href={item.value}
-                      className="mt-3"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {item.value}
-                    </a>
-                  ) : null}
-                  {item.name === "email" ? (
-                    <a
-                      href={`mailto:${item.value}`}
-                      className="mt-3"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {item.value}
-                    </a>
-                  ) : null}
-                  {item.name === "linkedin" ? (
-                    <a
-                      href={item.value}
-                      className="mt-3"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Marat Khasanov
-                    </a>
-                  ) : null}
+                    <BsFillTelephoneForwardFill className="relative z-20 text-2xl text-[#0077FF] md:text-3xl" />
+                  ) : (
+                    <MdEmail className="relative z-20 text-2xl text-[#0077FF] md:text-3xl" />
+                  )}
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-3">
+                      <p className="relative z-20 text-xl font-medium md:text-2xl">
+                        {item.name}:
+                      </p>
+                    </div>
+                    {item.name === "phone" ? (
+                      <a href={`tel:${item.value}`} className="mt-3">
+                        +420 608 725 616
+                      </a>
+                    ) : null}
+                    {item.name === "email" ? (
+                      <a
+                        href={`mailto:${item.value}`}
+                        className="mt-3"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.value}
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               ))
             )}

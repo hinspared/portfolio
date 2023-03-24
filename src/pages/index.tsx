@@ -5,10 +5,11 @@ import Contacts from "../components/Contacts";
 import Navbar from "../components/Navbar";
 import useOnScreen from "../utils/hooks/useOnScreen";
 import Projects from "../components/Projects";
+import Home from "../components/Home";
 
-const navigations = ["about", "projects", "contacts"];
+const navigations = ["about", "projects", "contact"];
 
-const Home: NextPage = () => {
+const MainPage: NextPage = () => {
   const [mobile, setMobile] = React.useState(false);
   const [isLandscape, setIsLandscape] = React.useState(false);
 
@@ -44,15 +45,15 @@ const Home: NextPage = () => {
   const aboutVisible = useOnScreen(aboutRef);
   const projectsRef = React.useRef(null);
   const projectsVisible = useOnScreen(projectsRef);
-  const contactsRef = React.useRef(null);
-  const contactsVisible = useOnScreen(contactsRef);
+  const contactRef = React.useRef(null);
+  const contactVisible = useOnScreen(contactRef);
 
   React.useEffect(() => {
     if (homeVisible) setActive("logo");
     if (aboutVisible) setActive("about");
     if (projectsVisible) setActive("projects");
-    if (contactsVisible) setActive("contacts");
-  }, [aboutVisible, contactsVisible, homeVisible, projectsVisible]);
+    if (contactVisible) setActive("contact");
+  }, [aboutVisible, contactVisible, homeVisible, projectsVisible]);
 
   const scroll = (target: string) =>
     document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
@@ -87,33 +88,12 @@ const Home: NextPage = () => {
         navigations={navigations}
         mobile={mobile}
       />
-      <div
-        className={`mx-auto w-4/5 gap-y-3 pt-20 md:h-screen md:w-3/5 md:pt-36 2xl:pt-72 ${
-          mobile && isLandscape ? "" : "h-screen"
-        }`}
-        id="home"
-      >
-        <p className="text-sm md:text-xl 2xl:text-3xl">
-          Hello there, I&apos;m{" "}
-        </p>
-        <p className="text-xl underline decoration-[#0077FF] decoration-4 underline-offset-4 md:text-2xl md:text-5xl 2xl:text-7xl">
-          Marat Khasanov
-        </p>
-        <p className="text-sm md:text-xl 2xl:text-3xl">Front-End Developer</p>
-        <p
-          className="mt-10 text-lg md:w-3/5 md:text-2xl 2xl:text-4xl"
-          ref={homeRef}
-        >
-          As a purposeful and highly motivated person I am looking for a company
-          that will give me a chance to apply my skills and develop myself as a
-          Front-End Developer
-        </p>
-      </div>
+      <Home mobile={mobile} isLandscape={isLandscape} ref={homeRef} />
       <About mobile={mobile} isLandscape={isLandscape} ref={aboutRef} />
       <Projects mobile={mobile} isLandscape={isLandscape} ref={projectsRef} />
-      <Contacts mobile={mobile} isLandscape={isLandscape} ref={contactsRef} />
+      <Contacts mobile={mobile} isLandscape={isLandscape} ref={contactRef} />
     </>
   );
 };
 
-export default Home;
+export default MainPage;
