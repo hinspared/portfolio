@@ -16,8 +16,8 @@ const projectsList = [
     name: "NFT Vault",
     description:
       "NFT Vault is a NFT marketplace where users can view and buy NFTs, also it provides stats to compare different NFT collections",
-    github: "https://github.com/Hinspared/nft_marketplace",
-    demo: "https://nft-marketplace-hinspared.vercel.app",
+    github: "https://github.com/Hinspared/nft_vault",
+    demo: "https://nft-vault.vercel.app",
     image: nft_vault,
     stack: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
