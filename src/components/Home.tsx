@@ -68,7 +68,7 @@ const Home = React.forwardRef<HTMLDivElement, HomeProps>(
             <p className="text-sm md:text-xl 2xl:text-3xl">
               Front-End Developer from Prague, Czechia
             </p>
-            <div className="mt-24 mb-10 flex gap-3 text-3xl md:mt-44 2xl:text-4xl">
+            <div className="mt-44 mb-10 flex gap-3 text-3xl 2xl:text-4xl">
               <Link
                 href="https://www.linkedin.com/in/marat-khasanov-209a02106"
                 target="_blank"
@@ -98,8 +98,8 @@ const Home = React.forwardRef<HTMLDivElement, HomeProps>(
                   <Image
                     src={icon.src}
                     alt={icon.name}
-                    height={40}
-                    width={40}
+                    height={props.mobile ? 25 : 40}
+                    width={props.mobile ? 25 : 40}
                   />
                 </Link>
               ))
