@@ -24,7 +24,7 @@ const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
 
     return (
       <div
-        className={`mx-auto  w-4/5 pt-20 md:w-3/5 md:pt-36 2xl:pt-72 ${
+        className={`mx-auto  w-4/5 pt-20 md:w-3/5 2xl:pt-36 ${
           landscapeMode ? "mb-16" : "h-screen"
         }`}
         id="contact"
@@ -37,7 +37,7 @@ const Contacts = React.forwardRef<HTMLDivElement, ContactsProps>(
             Let&apos;s have a chat
           </p>
           <div
-            className={`mt-3 md:mt-14 ${
+            className={`mt-20 md:mt-36 ${
               landscapeMode
                 ? "grid grid-cols-2 gap-x-20 gap-y-5"
                 : "flex flex-col gap-10"

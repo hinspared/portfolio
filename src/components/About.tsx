@@ -30,8 +30,9 @@ const About = React.forwardRef<HTMLDivElement, AboutProps>(
       <div
         className={`mx-auto ${
           props.isLandscape ? "" : "h-screen"
-        } w-4/5 pt-20 md:w-3/5 md:pt-36 2xl:pt-72`}
+        } w-4/5 pt-20 md:w-3/5 2xl:pt-36`}
         id="about"
+        ref={ref}
       >
         <div ref={ref}>
           <div

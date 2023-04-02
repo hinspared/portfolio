@@ -68,7 +68,7 @@ const Home = React.forwardRef<HTMLDivElement, HomeProps>(
             <p className="text-sm md:text-xl 2xl:text-3xl">
               Front-End Developer from Prague, Czechia
             </p>
-            <div className="mt-20 flex gap-3 text-3xl 2xl:text-4xl">
+            <div className="mt-24 mb-10 flex gap-3 text-3xl md:mt-44 2xl:text-4xl">
               <Link
                 href="https://www.linkedin.com/in/marat-khasanov-209a02106"
                 target="_blank"
@@ -86,12 +86,12 @@ const Home = React.forwardRef<HTMLDivElement, HomeProps>(
             </div>
           </div>
         </div>
-        <div className="mt-20 flex flex-col items-center md:flex-row">
-          <p className="text-sm font-medium md:text-3xl 2xl:text-4xl">
+        <div className="flex flex-col md:flex-row">
+          <p className=" text-sm font-bold md:text-3xl md:font-medium 2xl:text-4xl">
             Tech Stack
           </p>
           <RxDividerVertical className="hidden text-3xl text-slate-600 md:block" />
-          <div className="mt-5 flex flex-wrap justify-center gap-5 md:mt-0">
+          <div className="mt-5 flex flex-wrap gap-5 md:mt-0">
             {React.Children.toArray(
               icons.map((icon) => (
                 <Link href={icon.link} target="_blank" rel="noreferrer">

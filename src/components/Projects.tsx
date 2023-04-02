@@ -103,7 +103,7 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
             </Swiper>
           </div>
         ) : (
-          <div className="mx-auto h-screen w-3/5 pt-36 2xl:pt-72" id="projects">
+          <div className="mx-auto h-screen w-3/5 pt-20 2xl:pt-36" id="projects">
             <div ref={ref}>
               <p
                 className="text-5xl font-medium underline decoration-[#0077FF] decoration-4 underline-offset-4 2xl:text-7xl"
@@ -114,7 +114,7 @@ const Projects = React.forwardRef<HTMLDivElement, ProjectsProps>(
                 projects
               </p>
 
-              <div className="mt-10 flex justify-center gap-x-10">
+              <div className="mt-20 flex justify-center gap-x-10">
                 {React.Children.toArray(
                   projectsList.map((project) => (
                     <Project
