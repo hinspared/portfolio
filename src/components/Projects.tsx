@@ -1,5 +1,5 @@
 import React from "react";
-import nft_marketplace from "../../public/projects/nft_marketplace.webp";
+import nft_vault from "../../public/projects/nft_vault.webp";
 import todo_list from "../../public/projects/todo_list.webp";
 import travello from "../../public/projects/travello.webp";
 import dynamic from "next/dynamic";
@@ -18,7 +18,7 @@ const projectsList = [
       "NFT Vault is a NFT marketplace where users can view and buy NFTs, also it provides stats to compare different NFT collections",
     github: "https://github.com/Hinspared/nft_marketplace",
     demo: "https://nft-marketplace-hinspared.vercel.app",
-    image: nft_marketplace,
+    image: nft_vault,
     stack: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
