@@ -70,7 +70,7 @@ const Home = React.forwardRef<HTMLDivElement, HomeProps>(
             </p>
             <div className="mt-44 mb-10 flex gap-3 text-3xl 2xl:text-4xl">
               <Link
-                href="https://www.linkedin.com/in/marat-khasanov-209a02106"
+                href="https://www.linkedin.com/in/khasanov-marat"
                 target="_blank"
                 rel="noreferrer"
               >
